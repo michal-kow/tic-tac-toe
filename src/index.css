@@ -1,8 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -10,4 +9,104 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --clr-secondary: rgb(219, 219, 219);
+  --clr-bg: rgb(245, 245, 245);
+}
+
+*{
+  font-family: 'Lato';
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: rgb(240, 240, 240);
+}
+
+.board {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  gap: 0.25rem;
+  height: min(70vh, 70vw);
+  aspect-ratio: 1;
+  border: 7px solid var(--clr-secondary);
+  border-radius: 7px;
+  background-color: var(--clr-secondary);
+}
+
+.square {
+  border: none;
+  background: var(--clr-bg);
+  font-size: 120px;
+  color: rgb(85, 85, 85);
+}
+
+.square:focus {
+  outline: none;
+}
+
+.winner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 60%;
+  aspect-ratio: 0.7;
+  background-color: rgb(158, 186, 187);
+  border-radius: 50px;
+  opacity: 0;
+  display: none;
+}
+
+.winner.X, .winner.O, .winner.tie {
+  opacity: 0.99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.winner h2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-size: 56px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.winner h2 svg {
+  font-size: 120px;
+  margin: 20px 0;
+}
+
+.winner h2 button {
+  border: 5px solid rgb(255, 200, 49);
+  background-color: transparent;
+  border-radius: 50px;
+  padding: 8px 12px;
+  font-weight: 900;
+  color: rgb(255, 200, 49);
+  font-size: 32px;
+  margin-top: 40%;
+  cursor: pointer;
+  transition: 200ms ease;
+}
+
+.winner h2 button:hover {
+  background-color: rgb(255, 200, 49);
+  color: white;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  color: rgb(95, 95, 95);
+  font-size: 18px;
 }
