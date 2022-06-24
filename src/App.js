@@ -17,11 +17,11 @@ function App() {
       squares[0][i] = XO;
       setSquares(squares);
       if(winnerCheck(squares[0])){
-        if(winnerCheck(squares[0])==='IoMdClose') {
+        if(winnerCheck(squares[0])=='IoMdClose') {
           setWinner('X');
-        } else if(winnerCheck(squares[0])==='FiCircle') {
+        } else if(winnerCheck(squares[0])=='FiCircle') {
           setWinner('O');
-        } else if(winnerCheck(squares[0])==='tie') {
+        } else if(winnerCheck(squares[0])=='tie') {
           setWinner('tie');
         }
       }
